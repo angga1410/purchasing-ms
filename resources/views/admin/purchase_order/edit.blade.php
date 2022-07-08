@@ -12,6 +12,7 @@
 		</div>
 	</div>
 	<form action="{{ route('update_purchase_order') }}" method="post">
+		
 	<div class="tab-content padding40px shadowDiv">
 
 			{!! csrf_field() !!}
@@ -257,10 +258,17 @@
 
 			</div>
 
-
-
+			<div class="row">
+		<div class="col-12">
+			<button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom">Update</button>&nbsp;&nbsp;
+			<a href="{{ route('purchase_order_list') }}"><div class="btn btn-accent m-btn m-btn--air m-btn--custom">Cancel</div></a>
+		</div>
 	</div>
 
+	</div>
+	</form>
+	<form action="{{ route('update_purchase_order') }}" method="post">
+	{!! csrf_field() !!}
 	<div class="tab-content padding40px shadowDiv itemDiv">
 
 			<span class="product-tab">Products</span>
@@ -268,7 +276,7 @@
 			<div class="row" id="m_user_profile_tab_1">
 
 				<!-- Item Module -->
-
+				<input required="" type="hidden" value="{{ $data->id }}" name="id">
 				
 
 				<table class="table table-bordered" id="table">

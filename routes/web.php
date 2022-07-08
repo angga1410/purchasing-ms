@@ -241,6 +241,7 @@ Route::prefix('purchase_request')->group(function() {
 	Route::get('/edit/{id}', 'Admin\PrController@edit')->name('edit_purchase_request');
 	Route::get('/print/{id}', 'Admin\PrController@print')->name('print_purchase_request');
 	Route::post('/update', 'Admin\PrController@update')->name('update_purchase_request');
+	Route::post('/update2', 'Admin\PrController@update2')->name('update_purchase_request2');
 	Route::post('/import', 'Admin\ImportController@import_excel')->name('import');
 	Route::get('/detail/{id}', 'Admin\PrController@detail')->name('detail_purchase_request');
 	Route::post('/save/detail', 'Admin\PrController@saveDetail')->name('save_purchase_request_detail');

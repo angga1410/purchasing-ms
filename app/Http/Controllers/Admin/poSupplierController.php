@@ -825,7 +825,7 @@ class poSupplierController extends Controller
         // Parameters
         $input = $request->all();
         $id = $request->id;
-        $data['po_number'] = $request->po_number;
+      //  $data['po_number'] = $request->po_number;
         $data['pr_id'] = $request->pr_id;
         $data['supplier_id'] = $request->supplier_id;
         $data['supplier_contact_id'] = $request->supplier_contact_id;
@@ -865,7 +865,12 @@ class poSupplierController extends Controller
 
         //
         PurchaseOrder::where('id', $id)->update($data);
+        return redirect(route('purchase_order_list'))->with('success', 'Purchase order updated!');
+    
+    }
 
+    public function update2(Request $request){
+        $id = $request->id;
         if (!empty($request->items)) {
             //ITEMS
 
@@ -974,7 +979,6 @@ class poSupplierController extends Controller
         //
         return redirect(route('purchase_order_list'))->with('success', 'Purchase order updated!');
     }
-
 
 
 
